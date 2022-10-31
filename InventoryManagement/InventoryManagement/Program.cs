@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine(" Wellcome to Object Oriented Program !");
+            Console.WriteLine("  Wellcome to Object Oriented Program ! ");
 
             InvetoryManager invetoryManager = new InvetoryManager();
             invetoryManager.CalculateInventoryValue();
