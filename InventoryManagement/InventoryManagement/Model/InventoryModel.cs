@@ -8,17 +8,17 @@ namespace InventoryManagement.Model
 {
     public class InventoryModel
     {
-        public CommanProperties Rice { get; set; }
-        public CommanProperties Pulses { get; set; }
-        public CommanProperties Wheats { get; set; }
+        public List< CommanProperties >Rice { get; set; }
+        public List<CommanProperties> Pulses { get; set; }
+        public List<CommanProperties> Wheats { get; set; }
 
     }
 
     public class CommanProperties
     {
         public string Name { get; set; }
-        public string Weight { get; set; }
-        public string PricePerKg { get; set; }
+        public int  Weight { get; set; }
+        public int PricePerKg { get; set; }
 
     }
 }

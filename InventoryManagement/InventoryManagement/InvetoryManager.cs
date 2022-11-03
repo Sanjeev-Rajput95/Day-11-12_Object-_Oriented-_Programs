@@ -16,21 +16,25 @@ namespace InventoryManagement
         {
             var jsonData = File.ReadAllText(FilePath);
 
-            var inventoryData = JsonConvert.DeserializeObject<InventoryModel>(jsonData);
+            var inventoryData = JsonConvert.DeserializeObject<InventoryModel>(jsonData);    //list
 
-            Console.WriteLine(
-            inventoryData.Wheats.Name
-            + inventoryData.Wheats.PricePerKg
-            + inventoryData.Wheats.Weight
-            +"\n"+
-            inventoryData.Pulses.Name
-            + inventoryData.Pulses.PricePerKg
-            + inventoryData.Pulses.Weight
-            +"\n"+
-            inventoryData.Rice.Name
-            + inventoryData.Rice.PricePerKg
-            + inventoryData.Rice.Weight );
+            foreach(var Wheats in inventoryData.Wheats)
+            {
+                Console.WriteLine(Wheats.Name + "\n" + Wheats.Weight + "\n" + Wheats.PricePerKg);
+                Console.WriteLine($"Total Price of {Wheats.Name} is :  Rs. {Wheats.PricePerKg * Wheats.Weight}");
+            }
 
+            foreach(var Pulses in inventoryData.Pulses)
+            {
+                Console.WriteLine(Pulses.Name + "\n" + Pulses.Weight + "\n" + Pulses.PricePerKg);
+                Console.WriteLine($"Total Price of {Pulses.Name} is : Rs. {Pulses.PricePerKg * Pulses.Weight}");
+            }
+
+            foreach (var Rice in inventoryData.Rice)
+            {
+                Console.WriteLine(Rice.Name + "\n" + Rice.Weight + "\n" + Rice.PricePerKg);
+                Console.WriteLine($"Total Price of {Rice.Name} is : Rs. {Rice.PricePerKg * Rice.Weight}");
+            }
 
             Console.WriteLine("Data" + jsonData);
 

@@ -8,6 +8,9 @@
 
             InvetoryManager invetoryManager = new InvetoryManager();
             invetoryManager.CalculateInventoryValue();
+
+       
         }
     }
 }
+
